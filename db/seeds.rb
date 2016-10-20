@@ -12,3 +12,8 @@
                 username:  "Username#{i}",
                 password:  "password")
 end
+
+1..40.times do |i|
+    Post.create(title:  "Title#{i}",
+                body: "Body#{i}")
+end
