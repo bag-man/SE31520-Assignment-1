@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20161020120334) do
 
-  create_table "homes", force: :cascade do |t|
-    t.string   "welcomeText"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
