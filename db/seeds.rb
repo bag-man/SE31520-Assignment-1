@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 1..40.times do |i|
-    User.create(lastname:   "Surname#{i}",
+    User.create(lastname:  "Surname#{i}",
                 firstname: "Firstname#{i}",
-                username:     "Username{i}",
-                password:     "password")
+                username:  "Username#{i}",
+                password:  "password")
 end
