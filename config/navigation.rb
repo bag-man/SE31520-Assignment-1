@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
 
     # Highlight the home tab either if the path is / or /home
+    primary.item :home, 'Home', '/'
     primary.item :users, 'Users', '/users' #, :highlights_on => /(^\/$)|(^\/home)/
     primary.item :posts, 'Posts', '/posts'
     # primary.item :profile, 'Profile', '/profile', :if => Proc.new { is_admin? }
