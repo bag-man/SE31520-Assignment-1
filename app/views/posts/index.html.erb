@@ -4,6 +4,7 @@
     <table>
       <thead>
       <tr>
+        <th>User</th>
         <th>Title</th>
         <th>Body</th>
         <th></th>
@@ -14,6 +15,11 @@
       <tbody>
       <% @posts.each do |post| %>
           <tr>
+            <% if post.user %>
+              <td><%= link_to(post.user.username, user_path(post.user)) %></td>
+            <% else %>
+              <td> Anonymous </td>
+            <% end %>
             <td><%= post.title %></td>
             <td><%= post.body %></td>
             <td><%= link_to('Show', post_path(post, page: @posts.current_page)) %></td>

@@ -7,8 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-      @posts = Post.paginate(page: params[:page],
-                             per_page: params[:per_page])
+      @posts = Post.paginate(page: params[:page], :per_page => 10)
                    .order('title')
   end
 
@@ -19,7 +18,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = post.new
+    @post = Post.new
   end
 
   # GET /posts/1/edit
@@ -29,7 +28,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = post.new(post_params)
+    @post = Post.new(post_params)
+    @post.user = User.find_by username: params[:username]
 
     respond_to do |format|
       if @post.save
