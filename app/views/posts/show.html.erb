@@ -3,7 +3,7 @@
 <p>
   <strong>User:</strong>
   <% if @post.user %>
-    <td><%= link_to('Show', user_path(post.user.username)) %></td>
+    <td><%= link_to('Show', user_path(@post.user.username)) %></td>
   <% else %>
     <td> Anonymous </td>
   <% end %>

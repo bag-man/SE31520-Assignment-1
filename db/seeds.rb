@@ -6,14 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
-1..40.times do |i|
-    User.create(lastname:  "Surname#{i}",
-                firstname: "Firstname#{i}",
-                username:  "Username#{i}",
-                password:  "password")
-end
+#
+User.delete_all
+Post.delete_all
 
 1..40.times do |i|
-    Post.create(title:  "Title#{i}",
-                body: "Body#{i}")
+  user = User.create(lastname:  "Surname#{i}",
+                     firstname: "Firstname#{i}",
+                     username:  "Username#{i}",
+                     password:  "password")
+
+  Post.create( title: "Title#{i}",
+              body: "Body#{i}",
+              user: user)
 end
